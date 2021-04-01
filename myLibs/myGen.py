@@ -2,20 +2,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class NetG7(nn.Module):
-    def __init__(self, batch_size):
-        super(NetG7, self).__init__()
+class NetG(nn.Module):
+    def __init__(self):
+        super(NetG, self).__init__()
 
-        self.batch_size     = batch_size
         self.inLinear       = 30
         self.outLinear      = 128
         self.inChannels     = [128, 256, 512]
         self.outChannels    = [256, 512, 71]
         self.dropout        = 0.6
-        
-        self.ln1 = nn.LayerNorm(128, elementwise_affine=False)
-        self.ln2 = nn.LayerNorm(256, elementwise_affine=False)
-        self.ln3 = nn.LayerNorm(512, elementwise_affine=False)
 
         self.Linear1 = nn.Sequential(
             nn.Linear(self.inLinear, self.outLinear), 
@@ -39,7 +34,7 @@ class NetG7(nn.Module):
         )
         
         self.linear4 = nn.Sequential(
-            nn.Linear(self.inChannels[2], self.outChannels[2]), 
+            nn.Linear(self.inChannels[2], self.outChannels[2]),
             nn.BatchNorm1d(self.outChannels[2]),
             nn.Tanh(), 
         )

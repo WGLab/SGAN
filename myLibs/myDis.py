@@ -30,8 +30,6 @@ class CNN1d_5layer(nn.Module):
         self.cnn3 = nn.Sequential(
             nn.Conv1d(self.in_channels[2], self.out_channels[2], self.cnnkernel, self.cnnstride),
             nn.BatchNorm1d(self.out_channels[2]),
-#             nn.Tanh(), # 20210223-20:57
-#             nn.Dropout(p=self.dropout), # 20210223-20:57
         )
         
         self.linear1 = nn.Sequential(nn.Linear(13000, 2, bias=True))
@@ -43,17 +41,16 @@ class CNN1d_5layer(nn.Module):
         x  = self.cnn3(x)
         x  = x.view(x.size(0), -1)
         x1 = self.linear1(x)
-        return x1
-    
+        return x, x1
 
-def model3_1():
+def NetD():
     
     CNN_hparams                   = {}
     CNN_hparams['in_channels']    = [1, 10, 40]
     CNN_hparams['out_channels']   = [10, 40, 200]
     CNN_hparams['cnnkernel']      = 3
     CNN_hparams['cnnstride']      = 1
-    CNN_hparams['dropout']        = 0.3
+    CNN_hparams['dropout']        = 0.6
     CNN_hparams['num_classes']    = 2
     
     return CNN1d_5layer(CNN_hparams)
