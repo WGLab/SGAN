@@ -1,6 +1,7 @@
 ## data
 *.csv
-
+!myData/Train/*.csv
+!myData/Test/*.csv
 
 ## cache
 *.ipynb_checkpoints*
