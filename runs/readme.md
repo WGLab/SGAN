@@ -1,1 +1,0 @@
-# This folder is created by tensorboard, and the event file (log file) is stored here.

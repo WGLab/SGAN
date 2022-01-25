@@ -1,4 +1,5 @@
-# Model performance and interpretability of semi-supervised generative adversarial networks to predict oncogenic variants with unlabeled data
+# SGAN
+This is the code of the Paper *Model performance and interpretability of semi-supervised generative adversarial networks to predict oncogenic variants with unlabeled data*.
 
 In this pilot study, we present a semi-supervised learning model to solve the classification problem with insufficient label data. The result indicates that the predictive performance is slightly improved compared to the existing softwares using 4,000 labeled data and 60,000 unlabeled data. 
 
