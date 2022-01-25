@@ -40,7 +40,7 @@ def get_args():
 
 
     ## predict
-    predict_parser = subparsers.add_parser('genotype', help='STR caller')
+    predict_parser = subparsers.add_parser('predict', help='Predict oncogenicity of variants')
 
     predict_parser.add_argument( "-i", "--input",  help = "the path to input feature", \
         default=None, type=str, required=True )

@@ -5,7 +5,7 @@ import numpy  as np
 import pandas as pd
 
 import math
-from Discriminator import ensembleNet, evsNet
+from .Discriminator import ensembleNet, evsNet
 
 
 def predict(args):
