@@ -3,6 +3,7 @@ myData/*
 myLibs/*
 model_save/*
 runs/*
+saves/2022-01-28_14-43
 
 ## cache
 *.ipynb_checkpoints*
